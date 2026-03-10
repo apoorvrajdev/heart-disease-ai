@@ -53,23 +53,23 @@ AI Prediction Result
 
 Medical Interpretation
 
-![Healthy Patient Medical Interpretation]<img width="1205" height="821" alt="Healthy patient_MEDICAL INTERPRETATON" src="https://github.com/user-attachments/assets/6487b7f7-94c7-419f-ac08-a6bda9a54fa2" />
+<img width="1205" height="821" alt="Healthy patient_MEDICAL INTERPRETATON" src="https://github.com/user-attachments/assets/6487b7f7-94c7-419f-ac08-a6bda9a54fa2" />
 
 
 ### 🔴 High Risk Patient Prediction
 Patient Input Interface
 
-![High Risk Patient Input]<img width="1222" height="850" alt="High Risk patient_MAIN PAGE" src="https://github.com/user-attachments/assets/d877e1d7-64cf-416d-a743-26532cb9f21f" />
+<img width="1222" height="850" alt="High Risk patient_MAIN PAGE" src="https://github.com/user-attachments/assets/d877e1d7-64cf-416d-a743-26532cb9f21f" />
 
 
 AI Prediction Result
 
-![High Risk Patient Prediction]<img width="1171" height="690" alt="High Risk  patient_PREDICTION RESULT" src="https://github.com/user-attachments/assets/193bc94a-a89d-463e-954b-b9ec71ff1017" />
+<img width="1171" height="690" alt="High Risk  patient_PREDICTION RESULT" src="https://github.com/user-attachments/assets/193bc94a-a89d-463e-954b-b9ec71ff1017" />
 
 
 Medical Interpretation
 
-![High Risk Patient Medical Interpretation]<img width="1375" height="846" alt="High Risk patient_MEDICAL INTERPRETATON" src="https://github.com/user-attachments/assets/9a5f5632-110a-42c5-b82d-be94b01be2c2" />
+<img width="1375" height="846" alt="High Risk patient_MEDICAL INTERPRETATON" src="https://github.com/user-attachments/assets/9a5f5632-110a-42c5-b82d-be94b01be2c2" />
 
 -
 ⚠️ **Disclaimer:**  
@@ -81,7 +81,7 @@ This AI system estimates risk and **does not replace professional medical diagno
 
 ### Accuracy of Machine Learning Models
 
-![Model Accuracy](<img width="1115" height="576" alt="Model accuracy" src="https://github.com/user-attachments/assets/7ca75759-b053-45e1-bb6a-f543395fc680" />
+<img width="1115" height="576" alt="Model accuracy" src="https://github.com/user-attachments/assets/7ca75759-b053-45e1-bb6a-f543395fc680" />
 
 
 | Model | Accuracy |
@@ -96,7 +96,7 @@ Random Forest performed the best among the individual models.
 
 # 🤖 Ensemble & Boosted Models
 
-![Ensemble Models](<img width="1061" height="592" alt="boosted model accuracy" src="https://github.com/user-attachments/assets/4b70e2e6-04c3-419c-bdcc-8084d03a6f34" />
+<img width="1061" height="592" alt="boosted model accuracy" src="https://github.com/user-attachments/assets/4b70e2e6-04c3-419c-bdcc-8084d03a6f34" />
 
 
 | Model | Accuracy |
@@ -110,7 +110,7 @@ Boosted models achieved the **highest accuracy**.
 
 # 📈 K-Fold Cross Validation
 
-![Cross Validation](<img width="1076" height="582" alt="cross validation " src="https://github.com/user-attachments/assets/1d0e6aa5-9ea3-4329-b3b1-31f17e91902c" />
+<img width="1076" height="582" alt="cross validation " src="https://github.com/user-attachments/assets/1d0e6aa5-9ea3-4329-b3b1-31f17e91902c" />
 
 
 To ensure model stability and reduce overfitting, **5-fold cross validation** was used.
