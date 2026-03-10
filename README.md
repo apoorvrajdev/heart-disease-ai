@@ -43,12 +43,12 @@ The application collects patient medical information including age, cholesterol 
 ### 🟢 Healthy Patient Prediction
 Patient Input Interface
 
-![Healthy Patient Input]<img width="1353" height="846" alt="Healthy patient_MAIN PAGE" src="https://github.com/user-attachments/assets/d06c2dae-3ad6-4bc4-beaa-a87cb118352b" />
+<img width="1353" height="846" alt="Healthy patient_MAIN PAGE" src="https://github.com/user-attachments/assets/d06c2dae-3ad6-4bc4-beaa-a87cb118352b" />
 
 
 AI Prediction Result
 
-![Healthy Patient Prediction]<img width="1161" height="678" alt="Healthy patient_PREDICTION RESULT" src="https://github.com/user-attachments/assets/6fd2549d-e66b-495d-9d43-529eb4bf4ac3" />
+<img width="1161" height="678" alt="Healthy patient_PREDICTION RESULT" src="https://github.com/user-attachments/assets/6fd2549d-e66b-495d-9d43-529eb4bf4ac3" />
 
 
 Medical Interpretation
