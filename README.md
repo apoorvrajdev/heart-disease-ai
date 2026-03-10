@@ -22,12 +22,17 @@ The system analyzes medical parameters such as:
 and predicts the **probability of heart disease risk**.
 
 The model is deployed as an **interactive Streamlit web application** where users can input patient data and instantly receive a prediction.
-
 ---
 
+# ---
 # 🚀 Live Demo
 
-Run the AI prediction app locally: https://heart-disease-clinical-ai.streamlit.app
+[![Open App](https://img.shields.io/badge/Open%20Live%20App-Streamlit-red)](https://heart-disease-clinical-ai.streamlit.app)
+
+OR Try the AI heart disease risk analyzer here:
+
+https://heart-disease-clinical-ai.streamlit.app
+
 
 Users can input medical parameters and instantly receive:
 
