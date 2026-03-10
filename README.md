@@ -159,30 +159,28 @@ The project follows a complete machine learning workflow:
 
 # 📁 Project Structure
 ```
-heart-disease-ai
+heart-disease-prediction
 │
 ├── data
-│ └── heart.csv
+│   └── heart.csv
 │
-├── notebooks
-│ └── heart_disease_training.ipynb
+├── result
+│   ├── Healthy patient
+│   │   ├── Healthy patient_MAIN PAGE.png
+│   │   ├── Healthy patient_MEDICAL INTERPRETATON.png
+│   │   └── Healthy patient_PREDICTION RESULT.png
+│   │
+│   └── High risk patient
+│       ├── High Risk patient_MAIN PAGE.png
+│       ├── High Risk patient_MEDICAL INTERPRETATON.png
+│       └── High Risk patient_PREDICTION RESULT.png
 │
-├── app.py
-│
-├── models
-│ └── trained_model.pkl
-│
-├── results
-│ ├── model_accuracy.png
-│ ├── ensemble_accuracy.png
-│ ├── kfold_results.png
-│ ├── high-risk-patient-main-page.png
-│ ├── high-risk-patient-prediction-result.png
-│ └── high-risk-patient-medical-interpretation.png
-│
-├── requirements.txt
-│
-└── README.md
+├── app.py                       # Streamlit web application
+├── heart_disease_model.pkl      # Trained machine learning model
+├── heart_disease_training.ipynb # Model training notebook
+├── requirements.txt             # Python dependencies
+└── README.md                    # Project documentation
+
 ```
 ## Installation
 
