@@ -72,7 +72,8 @@ This AI system estimates risk and **does not replace professional medical diagno
 
 ### Accuracy of Machine Learning Models
 
-![Model Accuracy](results/model_accuracy.png)
+![Model Accuracy](<img width="1115" height="576" alt="Model accuracy" src="https://github.com/user-attachments/assets/7ca75759-b053-45e1-bb6a-f543395fc680" />
+
 
 | Model | Accuracy |
 |------|------|
@@ -86,7 +87,8 @@ Random Forest performed the best among the individual models.
 
 # 🤖 Ensemble & Boosted Models
 
-![Ensemble Models](results/ensemble_accuracy.png)
+![Ensemble Models](<img width="1061" height="592" alt="boosted model accuracy" src="https://github.com/user-attachments/assets/4b70e2e6-04c3-419c-bdcc-8084d03a6f34" />
+
 
 | Model | Accuracy |
 |------|------|
@@ -99,7 +101,8 @@ Boosted models achieved the **highest accuracy**.
 
 # 📈 K-Fold Cross Validation
 
-![Cross Validation](results/kfold_results.png)
+![Cross Validation](<img width="1076" height="582" alt="cross validation " src="https://github.com/user-attachments/assets/1d0e6aa5-9ea3-4329-b3b1-31f17e91902c" />
+
 
 To ensure model stability and reduce overfitting, **5-fold cross validation** was used.
 
