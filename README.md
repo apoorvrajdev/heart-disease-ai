@@ -38,31 +38,40 @@ Users can input medical parameters and instantly receive:
 ---
 
 # 🧠 AI Prediction Interface
+The application collects patient medical information including age, cholesterol level, blood pressure, ECG results, and other cardiovascular indicators to estimate heart disease risk.
 
-### Patient Input Interface
+### 🟢 Healthy Patient Prediction
+Patient Input Interface
 
-![Main Interface](results/high-risk-patient-main-page.png)
+![Healthy Patient Input]<img width="1353" height="846" alt="Healthy patient_MAIN PAGE" src="https://github.com/user-attachments/assets/d06c2dae-3ad6-4bc4-beaa-a87cb118352b" />
 
-The application collects patient information including age, cholesterol level, blood pressure, ECG results, and other cardiovascular indicators.
 
----
+AI Prediction Result
 
-# 🔬 Prediction Result
+![Healthy Patient Prediction]<img width="1161" height="678" alt="Healthy patient_PREDICTION RESULT" src="https://github.com/user-attachments/assets/6fd2549d-e66b-495d-9d43-529eb4bf4ac3" />
 
-### AI Risk Prediction
 
-![Prediction Result](results/high-risk-patient-prediction-result.png)
+Medical Interpretation
 
-The AI model calculates a **heart disease risk probability** and displays the result using a visual **risk gauge meter**.
+![Healthy Patient Medical Interpretation]<img width="1205" height="821" alt="Healthy patient_MEDICAL INTERPRETATON" src="https://github.com/user-attachments/assets/6487b7f7-94c7-419f-ac08-a6bda9a54fa2" />
 
----
 
-# 🏥 Medical Interpretation
+### 🔴 High Risk Patient Prediction
+Patient Input Interface
 
-![Medical Interpretation](results/high-risk-patient-medical-interpretation.png)
+![High Risk Patient Input]<img width="1222" height="850" alt="High Risk patient_MAIN PAGE" src="https://github.com/user-attachments/assets/d877e1d7-64cf-416d-a743-26532cb9f21f" />
 
-The system provides a **clinical interpretation** of the prediction to assist decision making.
 
+AI Prediction Result
+
+![High Risk Patient Prediction]<img width="1171" height="690" alt="High Risk  patient_PREDICTION RESULT" src="https://github.com/user-attachments/assets/193bc94a-a89d-463e-954b-b9ec71ff1017" />
+
+
+Medical Interpretation
+
+![High Risk Patient Medical Interpretation]<img width="1375" height="846" alt="High Risk patient_MEDICAL INTERPRETATON" src="https://github.com/user-attachments/assets/9a5f5632-110a-42c5-b82d-be94b01be2c2" />
+
+-
 ⚠️ **Disclaimer:**  
 This AI system estimates risk and **does not replace professional medical diagnosis.**
 
