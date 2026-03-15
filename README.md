@@ -23,7 +23,6 @@ and predicts the **probability of heart disease risk**.
 
 The model is deployed as an **interactive Streamlit web application** where users can input patient data and instantly receive a prediction.
 ---
-
 # ---
 # 🚀 Live Demo
 
@@ -41,7 +40,6 @@ Users can input medical parameters and instantly receive:
 - Medical interpretation
 
 ---
-
 # 🧠 AI Prediction Interface
 The application collects patient medical information including age, cholesterol level, blood pressure, ECG results, and other cardiovascular indicators to estimate heart disease risk.
 
@@ -98,7 +96,6 @@ This AI system estimates risk and **does not replace professional medical diagno
 Random Forest performed the best among the individual models.
 
 ---
-
 # 🤖 Ensemble & Boosted Models
 
 <img width="1061" height="592" alt="boosted model accuracy" src="https://github.com/user-attachments/assets/4b70e2e6-04c3-419c-bdcc-8084d03a6f34" />
@@ -112,7 +109,6 @@ Random Forest performed the best among the individual models.
 Boosted models achieved the **highest accuracy**.
 
 ---
-
 # 📈 K-Fold Cross Validation
 
 <img width="1076" height="582" alt="cross validation " src="https://github.com/user-attachments/assets/1d0e6aa5-9ea3-4329-b3b1-31f17e91902c" />
@@ -129,7 +125,6 @@ Metrics evaluated:
 The results show **consistently high performance across folds**, indicating strong generalization capability.
 
 ---
-
 # 📂 Dataset
 
 The dataset used is the **UCI Heart Disease Dataset**, a well-known dataset used for cardiovascular risk prediction research.
@@ -143,7 +138,6 @@ Dataset characteristics:
 Each row represents a patient with various medical attributes.
 
 ---
-
 # ⚙️ Machine Learning Pipeline
 
 The project follows a complete machine learning workflow:
@@ -160,7 +154,6 @@ The project follows a complete machine learning workflow:
 10. Web application deployment using Streamlit
 
 ---
-
 # 🧰 Technologies Used
 
 - Python
@@ -219,7 +212,6 @@ streamlit run app.py
 ```
 
 ---
-
 # 🚀 Future Improvements
 
 Possible enhancements for the project:
@@ -231,7 +223,6 @@ Possible enhancements for the project:
 - Improve UI with **advanced medical visualization**
 
 ---
-
 # 👨‍💻 Author
 
 **Apoorv Raj**
@@ -239,5 +230,4 @@ Possible enhancements for the project:
 Machine Learning & AI Engineer
 
 ---
-
 ⭐ If you found this project useful, consider giving it a **star** on GitHub.
