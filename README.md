@@ -1,233 +1,201 @@
-# ❤️ Heart Disease Risk Prediction AI
+# Heart Disease AI
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
-![Healthcare AI](https://img.shields.io/badge/Healthcare-AI-red)
-![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+> Production-oriented cardiovascular risk prediction dashboard built with Streamlit, XGBoost, and a reproducible Python ML workflow.
 
-This project builds an **AI-powered clinical decision support system** that predicts the **risk of heart disease** using machine learning.
+[Live Demo](https://heart-disease-clinical-ai.streamlit.app)
 
-The system analyzes medical parameters such as:
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-Inference-1F6F43?style=flat-square)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-Evaluation-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-111827?style=flat-square)
 
-- Age
-- Chest Pain Type
-- Cholesterol
-- Blood Pressure
-- ECG Results
-- Maximum Heart Rate
-- ST Depression
-- Major Vessels
+**Heart Disease AI** is a lightweight clinical decision-support prototype that estimates cardiovascular risk from structured patient indicators. The project emphasizes production-style ML engineering: deterministic preprocessing, serialized model inference, clear separation between training and serving concerns, and an operator-friendly Streamlit interface.
 
-and predicts the **probability of heart disease risk**.
+This repository is designed as an engineering artifact, not a notebook-only experiment.
 
-The model is deployed as an **interactive Streamlit web application** where users can input patient data and instantly receive a prediction.
----
-# ---
-# 🚀 Live Demo
+## Overview
 
-[![Open App](https://img.shields.io/badge/Open%20Live%20App-Streamlit-red)](https://heart-disease-clinical-ai.streamlit.app)
+Cardiovascular disease risk assessment depends on multiple clinical variables, including age, blood pressure, cholesterol, resting ECG results, exercise-induced angina, and ST depression. This project turns those structured inputs into a usable prediction workflow with a trained boosted model and an interactive dashboard for rapid scenario analysis.
 
-OR Try the AI heart disease risk analyzer here:
+The goal is not to replace medical judgment. The goal is to demonstrate how a machine learning model can be packaged into a maintainable inference application with clear UX, reproducible training assets, and a path toward production hardening.
 
-https://heart-disease-clinical-ai.streamlit.app
+## System Architecture
 
+```mermaid
+flowchart LR
+    U[User / Analyst] --> UI[Streamlit Dashboard]
+    UI --> V[Input Validation]
+    V --> FP[Feature Processing]
+    FP --> INF[ML Inference Layer]
+    INF --> XGB[XGBoost Prediction Engine]
+    XGB --> OUT[Risk Probability + Class Label]
+    OUT --> VIS[Gauge, Confidence Chart, Interpretation]
 
-Users can input medical parameters and instantly receive:
+    D[(Heart Disease Dataset)] --> NB[Training Notebook]
+    NB --> PREP[Cleaning + Feature Engineering]
+    PREP --> SPLIT[Train / Test Split]
+    SPLIT --> TRAIN[Model Training]
+    TRAIN --> TUNE[Model Comparison + Tuning]
+    TUNE --> EVAL[Metrics + Evaluation]
+    EVAL --> SER[Serialized Model Artifact]
+    SER --> INF
+```
 
-- Risk probability
-- Visual risk meter
-- Medical interpretation
+## Features
 
----
-# 🧠 AI Prediction Interface
-The application collects patient medical information including age, cholesterol level, blood pressure, ECG results, and other cardiovascular indicators to estimate heart disease risk.
+| Capability | Implementation |
+| --- | --- |
+| Real-time risk prediction | Streamlit form collects patient inputs and runs model inference on demand. |
+| Probabilistic scoring | Uses `predict_proba` to surface risk probability rather than only a binary label. |
+| Structured preprocessing | Converts UI inputs into the model's expected numerical feature vector. |
+| Interactive dashboard | Presents risk metrics, gauge visualization, confidence split, and interpretation text. |
+| Model serialization | Loads a trained model artifact from `heart_disease_model.pkl` using Joblib. |
+| Reproducible experimentation | Includes the training notebook and source dataset used to produce the model artifact. |
+| Evaluation assets | Stores model accuracy and cross-validation visualizations for review. |
+| Lightweight deployment shape | Single-command Streamlit runtime with minimal infrastructure overhead. |
 
-### 🟢 Healthy Patient Prediction
-Patient Input Interface
+## Tech Stack
 
-<img width="1353" height="846" alt="Healthy patient_MAIN PAGE" src="https://github.com/user-attachments/assets/d06c2dae-3ad6-4bc4-beaa-a87cb118352b" />
+| Layer | Technology |
+| --- | --- |
+| Language | Python |
+| App Framework | Streamlit |
+| ML Model | XGBoost / boosted classifier workflow |
+| Data Processing | Pandas, NumPy |
+| Model Evaluation | Scikit-learn |
+| Visualization | Plotly, Matplotlib |
+| Serialization | Joblib |
 
+## ML Pipeline
 
-AI Prediction Result
+1. **Data ingestion**
+   Load the heart disease dataset from `data/heart.csv` into a structured tabular workflow.
 
-<img width="1161" height="678" alt="Healthy patient_PREDICTION RESULT" src="https://github.com/user-attachments/assets/6fd2549d-e66b-495d-9d43-529eb4bf4ac3" />
+2. **Cleaning**
+   Validate clinical feature columns, normalize expected data types, and prepare model-ready records.
 
+3. **Feature engineering**
+   Preserve clinically meaningful predictors such as chest pain type, cholesterol, resting blood pressure, maximum heart rate, ST depression, and number of major vessels.
 
-Medical Interpretation
+4. **Train/test split**
+   Separate training and validation data to measure generalization outside the fitting sample.
 
-<img width="1205" height="821" alt="Healthy patient_MEDICAL INTERPRETATON" src="https://github.com/user-attachments/assets/6487b7f7-94c7-419f-ac08-a6bda9a54fa2" />
+5. **Model training**
+   Train and compare multiple classifiers, then promote the strongest boosted model for inference.
 
+6. **Hyperparameter tuning**
+   Evaluate boosted model behavior and cross-validation outputs to improve reliability.
 
-### 🔴 High Risk Patient Prediction
-Patient Input Interface
+7. **Evaluation**
+   Review model accuracy, validation behavior, and classification performance before promoting the serialized artifact.
 
-<img width="1222" height="850" alt="High Risk patient_MAIN PAGE" src="https://github.com/user-attachments/assets/d877e1d7-64cf-416d-a743-26532cb9f21f" />
+8. **Deployment workflow**
+   Persist the trained model with Joblib, load it inside the Streamlit runtime, and expose predictions through a controlled inference interface.
 
-
-AI Prediction Result
-
-<img width="1171" height="690" alt="High Risk  patient_PREDICTION RESULT" src="https://github.com/user-attachments/assets/193bc94a-a89d-463e-954b-b9ec71ff1017" />
-
-
-Medical Interpretation
-
-<img width="1375" height="846" alt="High Risk patient_MEDICAL INTERPRETATON" src="https://github.com/user-attachments/assets/9a5f5632-110a-42c5-b82d-be94b01be2c2" />
-
--
-⚠️ **Disclaimer:**  
-This AI system estimates risk and **does not replace professional medical diagnosis.**
-
----
-
-# 📊 Model Performance
-
-### Accuracy of Machine Learning Models
-
-<img width="1115" height="576" alt="Model accuracy" src="https://github.com/user-attachments/assets/7ca75759-b053-45e1-bb6a-f543395fc680" />
-
+## Performance Metrics
 
 | Model | Accuracy |
-|------|------|
+| --- | ---: |
 | KNN | 84.96% |
 | Random Forest | 88.02% |
 | SVM | 87.47% |
-
-Random Forest performed the best among the individual models.
-
----
-# 🤖 Ensemble & Boosted Models
-
-<img width="1061" height="592" alt="boosted model accuracy" src="https://github.com/user-attachments/assets/4b70e2e6-04c3-419c-bdcc-8084d03a6f34" />
-
-
-| Model | Accuracy |
-|------|------|
 | Voting Ensemble | 86.35% |
 | Boosted Model | **89.42%** |
 
-Boosted models achieved the **highest accuracy**.
+| Metric | Value |
+| --- | ---: |
+| Accuracy | 89.42% |
+| Precision | TBD |
+| Recall | TBD |
+| F1-score | TBD |
+| ROC-AUC | TBD |
 
----
-# 📈 K-Fold Cross Validation
+Additional validation assets are included in the repository:
 
-<img width="1076" height="582" alt="cross validation " src="https://github.com/user-attachments/assets/1d0e6aa5-9ea3-4329-b3b1-31f17e91902c" />
+- `Model accuracy.png`
+- `boosted model accuracy.png`
+- `cross validation .png`
 
+## Repository Structure
 
-To ensure model stability and reduce overfitting, **5-fold cross validation** was used.
-
-Metrics evaluated:
-
-- Accuracy
-- Precision
-- AUC Score
-
-The results show **consistently high performance across folds**, indicating strong generalization capability.
-
----
-# 📂 Dataset
-
-The dataset used is the **UCI Heart Disease Dataset**, a well-known dataset used for cardiovascular risk prediction research.
-
-Dataset characteristics:
-
-- Number of samples: **303**
-- Number of features: **14**
-- Target variable: **Heart disease presence**
-
-Each row represents a patient with various medical attributes.
-
----
-# ⚙️ Machine Learning Pipeline
-
-The project follows a complete machine learning workflow:
-
-1. Data loading using Pandas
-2. Exploratory Data Analysis (EDA)
-3. Data visualization using Seaborn and Matplotlib
-4. Feature scaling using StandardScaler
-5. Train-test split
-6. Model training
-7. Model comparison
-8. Ensemble modeling
-9. Cross validation
-10. Web application deployment using Streamlit
-
----
-# 🧰 Technologies Used
-
-- Python
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Streamlit
-- Jupyter Notebook
-
----
-
-# 📁 Project Structure
-```
-heart-disease-prediction
-│
-├── data
+```txt
+heart-disease-ai/
+├── app.py
+├── data/
 │   └── heart.csv
-│
-├── result
-│   ├── Healthy patient
-│   │   ├── Healthy patient_MAIN PAGE.png
-│   │   ├── Healthy patient_MEDICAL INTERPRETATON.png
-│   │   └── Healthy patient_PREDICTION RESULT.png
-│   │
-│   └── High risk patient
-│       ├── High Risk patient_MAIN PAGE.png
-│       ├── High Risk patient_MEDICAL INTERPRETATON.png
-│       └── High Risk patient_PREDICTION RESULT.png
-│
-├── app.py                       # Streamlit web application
-├── heart_disease_model.pkl      # Trained machine learning model
-├── heart_disease_training.ipynb # Model training notebook
-├── requirements.txt             # Python dependencies
-└── README.md                    # Project documentation
-
+├── result/
+│   ├── Healthy patient/
+│   └── High risk patient/
+├── assets/
+│   └── .gitkeep
+├── heart_disease_model.pkl
+├── heart_disease_training.ipynb
+├── Model accuracy.png
+├── boosted model accuracy.png
+├── cross validation .png
+├── requirements.txt
+├── LICENSE
+└── README.md
 ```
-## Installation
 
-### Clone the repository
+## Setup & Installation
 
-```
-git clone (https://github.com/apoorvrajdev/heart-disease-ai.git)
-```
-### Install dependencies
+Clone the repository:
 
+```bash
+git clone https://github.com/apoorvrajdev/heart-disease-ai.git
+cd heart-disease-ai
 ```
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+```bash
+# Windows
+.venv\Scripts\activate
+
+# macOS / Linux
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-### Run the application
+Run the dashboard:
 
-```
+```bash
 streamlit run app.py
 ```
 
----
-# 🚀 Future Improvements
+## Engineering Highlights
 
-Possible enhancements for the project:
+- **Production-style inference boundary**: the dashboard loads a serialized model artifact and keeps prediction logic separate from training exploration.
+- **Readable system design**: data, model, notebook, application, and result artifacts are easy to inspect during recruiter or engineering review.
+- **Minimal operational footprint**: the application can be run locally with a small Python dependency set and a single Streamlit command.
+- **Decision-support UX**: predictions include probability, confidence visualization, and concise interpretation instead of exposing raw model output alone.
+- **Extensible architecture**: the current design can evolve into an API-backed service, containerized deployment, or monitored model endpoint without rewriting the core workflow.
 
-- Use advanced models such as **XGBoost and LightGBM**
-- Add **Explainable AI (SHAP)** for model transparency
-- Deploy the system on **cloud infrastructure**
-- Integrate with **electronic health record systems**
-- Improve UI with **advanced medical visualization**
+## Future Improvements
 
----
-# 👨‍💻 Author
+- Containerize the application with Docker for reproducible deployment.
+- Add CI checks for linting, dependency validation, and notebook execution.
+- Publish a cloud-hosted inference endpoint behind a FastAPI service.
+- Add SHAP-based explainability for feature-level risk interpretation.
+- Introduce model monitoring for prediction drift and data quality checks.
+- Add authentication and audit logging for controlled clinical review workflows.
+- Store final model metrics in a versioned evaluation report.
 
-**Apoorv Raj**
+## License
 
-Machine Learning & AI Engineer
+This project is released under the [MIT License](LICENSE).
 
----
-⭐ If you found this project useful, consider giving it a **star** on GitHub.
+## Medical Disclaimer
+
+This project is for educational and engineering portfolio purposes only. It is not a medical device and should not be used as a substitute for professional medical advice, diagnosis, or treatment.
